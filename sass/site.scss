@@ -1,0 +1,30 @@
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+
+html{
+    height:100%;
+}
+body{
+  background-color:#666;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+}
+.slide{
+    width:60%;
+    height:80%;
+    background-color:#FFF;
+    margin:auto;
+    position:absolute;
+    @include border-radius(15px);
+    @include box-shadow;
+    
+}
+.slide.current{
+    left:20%;
+    top:10%;
+}
+.slide.next{
+    left:90%;
+    top:10%;
+}

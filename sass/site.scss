@@ -20,7 +20,7 @@ body{
   width:100%;
   overflow:hidden;
   font-family: national,sans-serif;
-  background:#16B2EC url('../Static/Screen Shot 2011-08-08 at 3.14.56 PM.png') no-repeat;
+  background:#000 url('../Static/header.jpeg') no-repeat;
 }
 .slide{
     @include linear-gradient(color-stops(#0093C9, #005389)); 

@@ -17,7 +17,7 @@ body {
   width: 100%;
   overflow: hidden;
   font-family: national,sans-serif;
-  background: #16b2ec url("../Static/Screen Shot 2011-08-08 at 3.14.56 PM.png") no-repeat;
+  background: black url("../Static/header.jpeg") no-repeat;
 }
 
 /* line 25, ../sass/site.scss */

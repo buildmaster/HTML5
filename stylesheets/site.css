@@ -1,23 +1,40 @@
-/* line 4, ../sass/site.scss */
+/* line 8, ../sass/site.scss */
 html {
   height: 100%;
-}
-
-/* line 7, ../sass/site.scss */
-body {
-  background-color: #666;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
+  font-weight: 400;
+  font-size: 40px;
 }
 
 /* line 13, ../sass/site.scss */
+#deck {
+  height: 900px;
+  width: 1100px;
+}
+
+/* line 17, ../sass/site.scss */
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: national,sans-serif;
+  background: #16b2ec url("../Static/Screen Shot 2011-08-08 at 3.14.56 PM.png") no-repeat;
+}
+
+/* line 25, ../sass/site.scss */
 .slide {
-  width: 60%;
-  height: 80%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0093c9), color-stop(100%, #005389));
+  background-image: -webkit-linear-gradient(top, #0093c9, #005389);
+  background-image: -moz-linear-gradient(top, #0093c9, #005389);
+  background-image: -o-linear-gradient(top, #0093c9, #005389);
+  background-image: -ms-linear-gradient(top, #0093c9, #005389);
+  background-image: linear-gradient(top, #0093c9, #005389);
+  background-color: #0093C9;
+  color: #FFF;
+  width: 900px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=99);
+  opacity: 0.99;
+  height: 700px;
   background-color: #FFF;
-  margin: auto;
-  position: absolute;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   -o-border-radius: 15px;
@@ -28,16 +45,110 @@ body {
   -webkit-box-shadow: 0px 0px 5px #333333;
   -o-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
+  font-family: national,sans-serif;
+  position: absolute;
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+}
+/* line 38, ../sass/site.scss */
+.slide p {
+  font-size: 30px;
 }
 
-/* line 23, ../sass/site.scss */
-.slide.current {
-  left: 20%;
-  top: 10%;
+/* line 43, ../sass/site.scss */
+code {
+  background: #08bdff;
 }
 
-/* line 27, ../sass/site.scss */
+/* line 49, ../sass/site.scss */
+.slide.slide-selected {
+  margin-left: 200px;
+}
+
+/* line 53, ../sass/site.scss */
 .slide.next {
-  left: 90%;
-  top: 10%;
+  left: 1300px;
+  display: block;
+}
+
+/* line 58, ../sass/site.scss */
+.slide.next2 {
+  left: 2600px;
+  display: block;
+}
+
+/* line 62, ../sass/site.scss */
+.slide.previous {
+  left: -900px;
+  display: block;
+}
+
+/* line 66, ../sass/site.scss */
+.slide.previous2 {
+  left: -2600px;
+  display: block;
+}
+
+/* line 70, ../sass/site.scss */
+section.boxcenter {
+  width: 980px;
+  height: 600px;
+  display: block;
+}
+/* line 74, ../sass/site.scss */
+section.boxcenter object {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 82, ../sass/site.scss */
+section.header-slide hgroup {
+  margin-top: 100px;
+  text-align: center;
+}
+/* line 85, ../sass/site.scss */
+section.header-slide hgroup h1 {
+  font-size: 60px;
+}
+/* line 89, ../sass/site.scss */
+section.header-slide p.subscript {
+  margin-top: 200px;
+}
+
+/* line 96, ../sass/site.scss */
+section.bullets h2, section.bullets li {
+  font-size: 60px;
+}
+/* line 99, ../sass/site.scss */
+section.bullets .sub {
+  font-size: 30px;
+  background: rgba(0, 255, 0, 0.05);
+  border: 2px solid rgba(0, 255, 0, 0.2);
+}
+
+/* line 109, ../sass/site.scss */
+section.bullets-smaller h2, section.bullets-smaller li {
+  font-size: 20px;
+}
+/* line 112, ../sass/site.scss */
+section.bullets-smaller .sub {
+  font-size: 20px;
+  background: rgba(0, 255, 0, 0.05);
+  border: 2px solid rgba(0, 255, 0, 0.2);
+}
+/* line 118, ../sass/site.scss */
+section.bullets-smaller ul {
+  height: 90%;
+  overflow: scroll;
+}
+
+/* line 126, ../sass/site.scss */
+section.big-lettering p {
+  font-size: 80px;
 }

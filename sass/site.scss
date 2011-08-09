@@ -1,30 +1,129 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/css3/gradient";
+@import "compass/utilities/color";
+@import "compass/css3/opacity";
 
 html{
     height:100%;
+    font-weight:400;
+    font-size:40px;
+}
+#deck{
+    height:900px;
+    width:1100px;
 }
 body{
-  background-color:#666;
+ 
   height:100%;
   width:100%;
   overflow:hidden;
+  font-family: national,sans-serif;
+  background:#16B2EC url('../Static/Screen Shot 2011-08-08 at 3.14.56 PM.png') no-repeat;
 }
 .slide{
-    width:60%;
-    height:80%;
-    background-color:#FFF;
-    margin:auto;
-    position:absolute;
+    @include linear-gradient(color-stops(#0093C9, #005389)); 
+    background-color:#0093C9;
+    color:#FFF; 
+    width:900px;
+    @include opacity(0.99);
+    height:700px;
+    background-color:#FFF;    
     @include border-radius(15px);
     @include box-shadow;
+    font-family: national,sans-serif;
+    position:absolute;
+    @include single-transition();
+    p{
+        font-size:30px;
+    }
     
 }
-.slide.current{
-    left:20%;
-    top:10%;
+code{
+    background:scale-lightness(#0093C9, 20)
+}
+.slide.maintitle{
+    
+}
+.slide.slide-selected{
+    margin-left:200px;
+
 }
 .slide.next{
-    left:90%;
-    top:10%;
+    left:1300px;
+    display:block;
+
+}
+.slide.next2{
+    left:2600px;
+    display:block;
+}
+.slide.previous{
+    left:-900px;
+    display:block;
+}
+.slide.previous2{
+    left:-2600px;
+    display:block;
+}
+section.boxcenter{
+    width:980px;
+    height:600px;
+    display:block;
+    object{
+        width:100%;
+        height:100%;
+    }
+}
+//slide styles
+section.header-slide 
+{
+    hgroup{
+    margin-top:100px;
+    text-align:center;
+    h1{
+        font-size:60px;
+    }
+   }
+   p.subscript{
+          margin-top:200px;
+      }
+    
+}
+section.bullets
+{
+    h2,li{
+        font-size:60px;
+    }
+    .sub{
+
+        font-size:30px;
+        background:rgba(0, 255, 0, 0.05);
+        border:2px solid rgba(0, 255, 0, 0.2);
+        
+    }
+}
+section.bullets-smaller
+{
+    h2,li{
+        font-size:20px;
+    }
+    .sub{
+        font-size:20px;
+        background:rgba(0, 255, 0, 0.05);
+        border:2px solid rgba(0, 255, 0, 0.2);
+        
+    }
+    ul{
+        height:90%;
+        overflow:scroll;
+    }
+    
+}
+section.big-lettering
+{
+    p{
+        font-size:80px;
+    }
 }

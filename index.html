@@ -1,17 +1,427 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-  <!--[if IE]>
-      <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <![endif]-->
-  <link rel="stylesheet" href="stylesheets/site.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link rel="stylesheet" href="stylesheets/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/site.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <title>HTML5 Hands On</title>
 </head>
 <body>
-  <div class="slide current">
-  </div>
-  <div class="slide next">
-  </div>
-</body>
-</html>
+    <header>
+        <h1>HTML5 Hands On</h1>
+        <nav>
+            <ul>
+                <li><button id="prev-btn" title="Previous slide">Previous Slide</button></li>
+                <li><span id="slide-number"></span>/<span id="slide-total"></span></li>
+                <li><button id="next-btn" title="Next Slide">Next Slide</button></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="deck">
+        <section class="header-slide maintitle">
+            <hgroup>
+                <h1>HTML 5 Hands On*</h1>
+                <h2>Owen Evans</h2>
+                <h2>Chief Architect</h2>
+                <h2><img src="Static/xero_logo_white.png" width="100" height="100" alt="Xero Logo White" /></h2>
+            </hgroup>
+            <p class="subscript">
+                *This presentation borrows heavily from Paul Irish's HTML5 for Humans talk at WDCNZ. Used by permission
+            </p>
+        </section>
+        <section>
+            <hgroup>
+                <h1>Current State of Play</h1>
+            </hgroup>
+            <section class="hbox boxcenter">
+                <object data="http://html5readiness.com/">
+                    <object data="static/images/html5rnss.png"></object>
+                </object>
+            </section>
+        </section>
+        <section>
+            <hgroup>
+                <h1>It's Media Stupid</h1>
+            </hgroup>
+            <p>We seem to be downgrading to the lowest common denominator</p>
+            <p>Hasn't TV already been through this?</p>
+            <p><a href="Static/progressive-enhancement-2-0-110424124736-phpapp01.pdf" target="_new"><img src="Static/HowMediaWorks.png" width="500" height="375" alt="HowMediaWorks"></a></p>
+            <p><a href="http://www.slideshare.net/nzakas/progressive-enhancement-20">Progressive Enhancement 2.0 by Nicholas C. Zakas</a></p>
+        </section>
+        <section class="bullets">
+            <hgroup>
+                <h1>Why?</h1>
+            </hgroup>
+            <h2>3 Reasons</h2>
+            <ul>
+                <li class="action">Scared?</li>
+                <li class="action">Scared?</li>    
+                <li class="action">boss told me not to?</li>
+            </ul>
+        </section>
+        <section class="bullets">
+            <hgroup>
+                <h1>What can we use?</h1>
+            </hgroup>
+            <h2>Break it down into 4 areas</h2>
+            <ul>
+                <li class="action">Works everywhere</li>
+                <li class="action">Defensible Space (mobile apps, tools for devs)</li>    
+                <li class="action">Lack of support is OK</li>
+                <li class="action">Polyfills</li>
+            </ul>
+        </section>
+        <section class="bullets">
+            <hgroup>
+                <h1>Feature detection</h1>
+            </hgroup>
+            <h2>Try not to use UA sniffing, instead feature detect: Modernizr does that</h2>
+            <section class="hbox boxcenter">
+                <object data="http://modernizr.com/">
+                </object>
+            </section>
+        </section>
+        <section class="bullets-smaller">
+            <hgroup>
+                <h1>Dependable Features</h1>
+            </hgroup>
+            <ul>
+                <li>doctype
+                    <div class="action sub">&lt;!doctype html&gt;</div>
+                </li>
+                <li>charset
+                    <div class="action sub">&lt;meta charset="utf-8"&gt;</div>
+                </li>
+                <li>self-closed tags, optional quotes
+                    <div class="action sub">&lt;link rel=stylesheet href=style.css/&gt;</div>
+                </li>
+                <li>no more type attributes
+                    <div class="action sub">&lt;link rel=stylesheet <span style="text-decoration:line-through">type="style/css"</span> href=style.css /&gt;</div>
+                </li>
+                <li>new semantics
+                    <div class="action sub">&lt;article&gt; &lt;nav /&gt; &lt;section&gt;</div>
+                </li>
+                <li>data-* attributes
+                    <div class="action sub">&lt;a data-omg="double"&gt;</div>
+                </li>
+                <li>contenteditable
+                    <div class="action sub"><a href="http://annevankesteren.nl/test/contenteditable-style.htm" target="_blank">content editable mindf* by Anne van Kesteren</a></div>
+                </li>     
+                <li>box-shadow
+                    <div class="action sub">
+                        <a href="http://www.viget.com/uploads/file/boxshadows/"  target="_blank">39 Ridiculous things to do with css3 box shadows</a>
+                    <br/>
+                        <a href="http://nicolasgallagher.com/css-drop-shadows-without-images/demo/"  target="_blank">CSS drop-shadows without images</a>
+                        </div>
+                </li>
+                <li>text-align
+                    <div class="action sub"><a href="http://textaligncentaur.com/"  target="_blank">text-align: centaur</a></div>
+                </li>    
+            </ul>                                       
+        </section>
+        <section class="bullets-smaller">
+            <hgroup>
+                <h1>Roughly usable features</h1>
+            </hgroup>
+            <ul>
+                <li>audio &amp; video</li>
+                <li>canvas
+                    <div class="action sub">
+                        <a href="http://paulirish.com/work/video2ascii/" target="_blank">video to ascii</a>
+                 <br/>
+                        <a href="http://studio.html5rocks.com/samples/video-cube/index.html" target="_blank">video to ascii cube</a>
+                   <br/>
+                        <a href="https://github.com/bebraw/jswiki/wiki" target="_blank">jswiki</a>
+                    </div>                            
+                </li>
+                <li>SVG</li>
+                <li>geolocation</li>
+                <li>web sockets</li>
+                <li>web storage</li>
+                <li>input autofocus &amp; placeholder
+                    <div class="action sub">
+                        <input placeholder="clear me when you click me, bro" style="font-size: 20px; width: 360px;">
+                    </div>
+                </li>
+                <li>css gradients
+                    <div class="action sub">
+                        <a href="http://leaverou.me/css3patterns/"  target="_blank">css patterns gallery</a>(<a href="http://www.standardista.com/cssgradients/" target="_blank">and more</a>)
+                        <br/>
+                        <a href="http://css3please.com/"  target="_blank">css3please</a>
+                        <br/>
+                        <a href="http://gradient-scanner.com/"  target="_blank">gradient scanner</a>
+                        </div>
+                </li>
+                <li>css transforms &amp; transitions
+                    <div class="action sub">
+                        <a href="http://www.youtube.com/embed/IKl78ZgJzm4"  target="_blank">hardware acceleration</a>
+                        <br/>
+                        <a href="http://2011.beercamp.com/"  target="_blank">beercamp site</a>
+                        <br/><a href="http://isotope.metafizzy.co/demos/elements-partial.html"  target="_blank">isotope</a>
+                        <br/><a href="http://www.joelambert.co.uk/flux/transgallery.html"  target="_blank">flux slider</a>
+                        <br/>                        
+                        <a href="http://www.idangero.us/cs/"  target="_blank">jquery chop slider</a></div>
+                </li>
+                <li>requestAnimationFrame()
+                    <div class="action sub"><a href="http://paulirish.com/2011/requestanimationframe-for-smart-animating/"  target="_blank">blog post</a></div>
+                </li>
+                <li>orientation
+                    <div class="action sub"><a href="http://www.monocubed.com/2010/10/20/fight-or-flight-html5-game/"  target="_blank">fight or flight</a></div>
+                </li>
+            </ul>                                       
+        </section>
+        <section class="bullets-smaller">
+            <hgroup>
+                <h1>Experimental features</h1>
+            </hgroup>
+            <ul>
+                <li>form input types</li>
+                <li>&lt;meter&gt;&amp;&lt;progress&gt;
+                    <div class="sub action">
+                        progress:
+                        <progress max="100"></progress> 
+                        <progress max="10" value="0"></progress> 
+                        <progress max="3254" value="3254"></progress> 
+                        <progress max="0.7" value="0.4"></progress> 
+                        <progress id="progress-javascript-example" max="122" value="89.6863"></progress> 
+
+                        <br />meter:
+                        <meter value="0"></meter> 
+                        <meter value="1"></meter> 
+                        <meter min=".34" max=".41" value=".36"></meter> 
+                        <meter min="50" max="250" low="100" high="200" value="120"></meter> 
+                        <meter min="1024" max="10240" low="2048" high="8192" value="9216"></meter> 
+                        <meter value=".5" optimum=".8"></meter> 
+                        <meter id="meter-javascript-example" value="41.4404" min="0" max="90" low="20" high="80" optimum="65"></meter> 
+
+
+                        <script language="text/javascript"> 
+                                                   (function () {
+                                                       if (!('position' in document.createElement('progress'))) {
+                                                           var elements = document.querySelectorAll('meter, progress');
+                                                           for (var i = 0, j = elements.length; i < j; i++) {
+                                                               elements[i].style.border = "1px solid red";
+                                                               elements[i].style.height = "12px";
+                                                               elements[i].style.display = "inline-block";
+                                                               elements[i].style.webkitAppearance = "none";
+                                                           }
+
+                                                           return;
+                                                       }
+
+                                                       /** Setup the <progress> JavaScript example **/
+                                                       var progressExample = document.getElementById('progress-javascript-example');
+                                                       progressExample.min = 50;
+                                                       progressExample.max = 122;
+
+                                                       setInterval(function () {
+                                                           progressExample.value = progressExample.min + Math.random() * (progressExample.max - progressExample.min);
+
+                                                       }, 1000);
+
+                                    /** We'd like some fancy <meter> examples too 
+
+                                                                    **/
+                                                       var meterExample = document.getElementById('meter-javascript-example');
+                                                       meterExample.min = 0;
+                                                       meterExample.max = 90;
+                                                       meterExample.value = 50;
+                                                       meterExample.low = 20;
+                                                       meterExample.high = 80;
+                                                       meterExample.optimum = 65;
+
+                                                       setInterval(function () {
+                                                           meterExample.value = meterExample.min + Math.random() * (meterExample.max - meterExample.min);
+                                                           //meterExample.optimum = 65 + (5 - Math.random () * 10);
+                                                       }, 1000);
+
+                                                   })();
+
+                                    </script>
+
+
+
+                    </div>
+                </li>
+                <li>web SQL database &amp; IndexedDB</li>
+                <li>web workers</li>
+                <li>WebGL
+                    <div class="action sub">
+                        <a href="http://leaverou.me/css3patterns/"  target="_blank">http://chrysaora.com/</a>
+                        <br/>
+                        <a href="http://mozillademos.org/demos/remixingreality/demo.html"  target="_blank">mozilla remixing reality</a>
+                        
+                        <br/><a href="http://evanw.github.com/webgl-filter/"  target="_blank">webgl-filter</a>
+                    </div>
+                </li>
+
+                <li>history.pushState
+                    <div class="action sub">
+                        <a href="https://github.com/defunkt/jquery-pjax" target="_blank">jquery-pjax</a>
+                    </div>
+                </li>
+                <li>file api
+                    <div class="action sub"><a href="http://www.dropmocks.com/"  target="_blank">dropmocks</a></div>
+                </li>
+                <li>applicationCache</li>
+                <li>page visibility
+                    <div class="action sub"><a href="http://www.igvita.com/2011/06/25/html5-visibility-api-page-pre-rendering/"  target="_blank">blog post</a></div>
+                </li>
+                <li><code>&lt;input accept="" multiple&gt;</code>
+                    <div class="action sub"><a href="http://www.htmlfivewow.com/slide17"  target="_blank">FileList demo</a></div>
+                </li>
+                <li><code>&lt;input speech&gt;</code>
+                    <div class="action sub"><a href="http://search.twitter.com/"  target="_blank">twitter search demo</a></div>
+                </li>
+            </ul>                                       
+        </section>
+        <section class="bullets-smaller">
+            <hgroup>
+                <h1>Edge features</h1>
+            </hgroup>
+            <ul>
+                <li>CSS: advanced selectors &amp; features
+                    <div class="action sub">
+                        <a href="http://design.kayac.com/topics/2011/06/css-programing.php" target="_blank">css only games</a>
+                    <br/>
+                        <a href="http://www.xanthir.com/blog/b49w0" target="_blank">mixins</a>
+                    </div>
+                </li>
+                <li>drag n drop</li>
+                <li>&lt;device&gt; aka getUserMedia()
+                    <div class="sub action">
+                        <a href="http://my.opera.com/core/blog/2011/03/23/webcam-orientation-preview" target="_blank">Opera Mobile camera build</a>
+                    </div>
+                </li>
+                <li>audio data API
+                    <div class="sub action">
+                        <a href="http://videos.mozilla.org/serv/blizzard/audio-slideshow/" target="_blank">firefox audio data in action</a>
+                        <br/><a href="http://chromium.googlecode.com/svn/trunk/samples/audio/index.html" target="_blank">webkit audio data in action</a>
+                    </div>
+                </li>
+                <li>
+                    svg filters
+                </li>
+                <li>
+                    WebRTC
+                </li>
+                <li>
+                    CSS Regions &amp; positioned floats
+                    <div class="sub action"><a href="http://www.adobe.com/devnet/html5/articles/css3-regions.html" target="_blank">regions article</a>
+                    </li>
+                    <li>
+                        File System API
+                        <div class="sub action"><a href="http://www.htmlfivewow.com/slide29" target="_blank">FileSystem code</a>
+                        </li>
+
+                    </ul>                                       
+                </section>
+                <section>
+                    <hgroup>
+                        <h1>Polyfill</h1>
+                    </hgroup>
+                    <h2>Using Javascript shims to mimic core API functions as a fallback for older browsers</h2>
+                    <p>e.g. <a href="https://gist.github.com/366184" target="_new">geolocaiton</a> polyfill</a>
+                        <section style="height:500px;overflow:scroll;display:block"><script src="https://gist.github.com/1094836.js?file=gistfile1.js"></script></section>
+                    </p>
+                </section>
+                <section>
+                    <hgroup>
+                        <h1>Cross browser Polyfill</h1>
+                    </hgroup>
+                    <section class="hbox boxcenter">
+                        <object data="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">
+                        </object>
+                    </section>
+                </section>
+                <section>
+                    <hgroup>
+                        <h1>Do you support?</h1>
+                    </hgroup>
+                    <section class="hbox boxcenter">
+                        <object data="http://yepnopejs.com/">
+                        </object>
+                    </section>
+                </section>
+                <section class="big-lettering">
+                    <p>
+                        While you can provide consistent features everywhere, maybe you shouldn't.
+                    </p>
+                </section>
+                <section class="big-lettering">
+                    <p>
+                        Be the champion of performance
+                    </p>
+                </section>
+                <section class="big-lettering">
+                    <p>
+                        Two Performance Truths:<br/>
+                        Both you and the client want the most responsive experience possible.<br/>
+                        Everything added to the page slows it down.<br/>
+                    </p>
+                </section>
+                <section class="big-lettering">
+                    <p>
+                        Care about Experience<br/>
+                        An excellent experience is better than feature parity across browsers<br/>
+                    </p>
+                </section>
+                <section class="bullets">
+                    <hgroup>
+                        <h1>More Resources</h1>
+                    </hgroup>
+
+                    <ul>
+                        <li><a target="_blank" href="http://caniuse.com">caniuse.com</a></li>
+                        <li><a target="_blank" href="http://jsperf.com/popular">jsperf</a> &amp; <a target="_blank" href="http://www.browserscope.org/">browserscope</a></li>
+                        <li><a target="_blank" href="http://chromestatus.com">chromestatus.com</a></li>
+                        <li><a target="_blank" href="http://html5rocks.com">HTML5 Rocks</a></li>
+                        <!-- <li><a target="_blank" href="http://html5doctor.com">HTML5 Doctor</a></li>  -->
+                        <li><a target="_blank" href="https://developer.mozilla.org/en/HTML/HTML5">mozilla MDN</a></li>
+                    </ul>
+
+                </section>
+
+
+                <section class="big-lettering">
+                    <p>FIN</p>
+                    <div style="text-align:center">
+                        <img src="Static/xero_logo_white.png" width="100" height="100" alt="Xero Logo White">
+                   
+                            http://xero.com/careers
+                            </div>
+                    </section>
+                </section>
+            </div>
+        </body>
+        <script type="text/javascript" src="http://use.typekit.com/hin2ztf.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script src="scripts/jquery-1.5.2.min.js"></script>
+        <script src="scripts/jquery.jswipe-0.1.2.js"></script>  
+        <script src="scripts/htmlSlides.js"></script>
+        <script>
+        //Do our business when the DOM is ready for us
+        $(function() {
+
+            //You can trigger Javascript based on the slide number like this:
+            $('html').bind('newSlide', function(e, id) { 
+                switch(id) {
+                    case 2:
+                    console.log('This is the second slide.');;
+                    break;
+                    case 3:
+                    console.log('Hello, third slide.');
+                    break;
+                }
+            });
+
+            //One little option: hideToolbar (boolean; default = false)
+            htmlSlides.init({ hideToolbar: true });
+
+        });
+        </script>
+        </html>

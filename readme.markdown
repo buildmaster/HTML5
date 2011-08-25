@@ -1,0 +1,1 @@
+To run the slides just download the repository and put it behind a webserver or serve index.html off disk
